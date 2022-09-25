@@ -1,1 +1,18 @@
+server:
+  port: 8083 # 포트
 
+spring:
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver  # 마리아 DB 설정
+    url: jdbc:mariadb://localhost:3306/soclear
+    username: root
+    password: 1111
+
+  devtools:
+    livereload:
+      enabled: true # 정적 리소스가 있을 때 바로 반영하는 설정
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false # thymeleaf에 대한 캐시를 남기지 않는다. cache=false 설정(운영시는 true)
+    check-template-location: true # templates 디렉토리에 파일이 있는지 없는지 체크, 없으면 에러를 발생시킨다.
